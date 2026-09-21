@@ -1,0 +1,33 @@
+# Vacuum Cleaner Agent
+
+rooms = {
+    "A": "Dirty",
+    "B": "Dirty"
+}
+
+location = "A"
+
+while rooms["A"] == "Dirty" or rooms["B"] == "Dirty":
+
+    print("Location:", location)
+    print("Room A:", rooms["A"], "| Room B:", rooms["B"])
+
+    if rooms[location] == "Dirty":
+        print("Action: SUCK")
+        rooms[location] = "Clean"
+
+    elif location == "A":
+        print("Action: MOVE RIGHT")
+        location = "B"
+
+    else:
+        print("Action: MOVE LEFT")
+        location = "A"
+
+    print()
+
+print("Final State:")
+print("Room A:", rooms["A"])
+print("Room B:", rooms["B"])
+print("Goal achieved: Both rooms are clean!")
+    
